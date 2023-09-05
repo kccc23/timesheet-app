@@ -2,7 +2,26 @@
 
 import React, { useState, useEffect } from "react";
 
-const Entries = () => {
+const aggregateEntries = (entries) => {
+    const aggr = {};
+
+    entries.forEach(entry => {
+        const key = `${entry.project}_${entry.client}`;
+        if (!aggr[key]) {
+            aggr[key] = { ...entry, hours: 0, billable_hours: 0, billable_amount: 0 };
+        }
+        aggr[key].hours += entry.hours;
+        if (entry.billable === "Yes") {
+            aggr[key].billable_hours += entry.hours;
+            aggr[key].billable_amount += entry.billable_rate * entry.hours;
+        }
+    });
+
+    return Object.values(aggr);
+};
+
+
+const ProjectEntries = () => {
     const [entries, setEntries] = useState([]);
     const [totalHours, setTotalHours] = useState(0);
     const [totalAmount, setTotalAmount] = useState(0);
@@ -17,7 +36,8 @@ const Entries = () => {
     const fetchEntries = async () => {
         const res = await fetch("/api/entries");
         const newEntries = await res.json();
-        setEntries(newEntries);
+        const aggregatedEntries = aggregateEntries(newEntries);
+        setEntries(aggregatedEntries);
 
         const totalBillableHours = newEntries.reduce((total, entry) => {
             if (entry.billable === "Yes") {
@@ -73,13 +93,12 @@ const Entries = () => {
                     <tr key={entry.id}>
                         <td>{entry.project}</td>
                         <td>{entry.client}</td>
-                        <td>{entry.hours}</td>
-                        {(entry.billable === "Yes") ?
-                            (<td>{entry.hours}{" "}(100%)</td>) :
-                            (<td>0.00{" "}(0%)</td>)
-                        }
-                        {(entry.billable === "Yes") ?
-                            (<td>{formatAmount.format(entry.billable_rate * entry.hours)}</td>) :
+                        <td>{entry.hours.toFixed(2)}</td>
+                        <td>{entry.billable_hours.toFixed(2)}{" "}
+                            ({Math.round(entry.billable_hours / entry.hours * 100)}%)
+                        </td>
+                        {(formatAmount.format(entry.billable_amount) !== "$0.00") ?
+                            (<td>{formatAmount.format(entry.billable_amount)}</td>) :
                             (<td>-</td>)
                         }
                     </tr>
@@ -90,4 +109,4 @@ const Entries = () => {
     );
 }
 
-export default Entries;
+export default ProjectEntries;
