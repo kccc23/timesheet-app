@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getEntries, getEntriesByClient, createEntry } from "@/lib/queries";
+import { revalidatePath } from "next/cache";
 
 export async function GET(req) {
     const { url } = req;
@@ -22,6 +23,7 @@ export async function POST(req) {
     const result = await createEntry(entry);
 
     if (result) {
+        revalidatePath("/entries");
         return new Response(null, {
             headers: { "Content-Type": "application/json" },
             status: 201,

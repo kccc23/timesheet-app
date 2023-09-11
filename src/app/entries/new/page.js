@@ -2,6 +2,7 @@
 import { useState } from "react";
 import InputTag from "@/components/InputTag";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 
 const defaultFormData = {
@@ -17,6 +18,7 @@ const defaultFormData = {
 };
 
 export default function CreateEntry() {
+    const router = useRouter();
     const fadeInScale = {
         hidden: {
             opacity: 0,
@@ -52,7 +54,7 @@ export default function CreateEntry() {
         if (res.status === 201) {
             alert("Entry created successfully");
             clearForm();
-            window.location.href = "/entries";
+            router.push("/entries");
         } else {
             alert("Something went wrong");
         }
