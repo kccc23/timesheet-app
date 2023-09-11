@@ -4,6 +4,18 @@ import InputTag from "@/components/InputTag";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+const defaultFormData = {
+    date: '',
+    client: '',
+    project: '',
+    project_code: '',
+    hours: '',
+    billable: 'No',
+    first_name: '',
+    last_name: '',
+    billable_rate: ''
+};
+
 export default function CreateEntry() {
     const fadeInScale = {
         hidden: {
@@ -20,30 +32,10 @@ export default function CreateEntry() {
         },
     };
 
-    const [formData, setFormData] = useState({
-        date: '',
-        client: '',
-        project: '',
-        project_code: '',
-        hours: '',
-        billable: 'No',
-        first_name: '',
-        last_name: '',
-        billable_rate: ''
-    });
+    const [formData, setFormData] = useState(defaultFormData);
 
     const clearForm = () => {
-        setFormData({
-            date: '',
-            client: '',
-            project: '',
-            project_code: '',
-            hours: '',
-            billable: 'No',
-            first_name: '',
-            last_name: '',
-            billable_rate: ''
-        });
+        setFormData(defaultFormData);
     };
 
     const handleChange = (e) => {
@@ -73,7 +65,7 @@ export default function CreateEntry() {
             animate="visible"
             variants={fadeInScale}
         >
-        <div className="bg-white rounded-xl p-8 max-w-xl w-full relative z-10 shadow-lg">
+        <div className="bg-white sm:rounded-xl p-8 max-w-xl w-full relative z-10 shadow-lg">
             <div className="mb-8">
                 <Link href="/entries" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
                     Back to Entries

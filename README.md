@@ -1,7 +1,7 @@
 <br />
 <div align="center">
 
-  <h3 align="center">Next.js Timesheet App</h3>
+  <h3 align="center" id="readme-top">Next.js Timesheet App</h3>
 
   <p align="center">
     <br />
@@ -34,7 +34,7 @@ Learn to run this locally.
 
 ### Prerequisites
 
-* Node - visit https://nodejs.org/en
+* Node - install version 18 stable, visit https://nodejs.org/en
 
 * npm
   ```sh
@@ -49,26 +49,42 @@ _How you can install and setting up your app._
    ```sh
    git clone https://github.com/kccc23/timesheet-app.git
    ```
-2. Install NPM packages
+2. Go to the project folder
+   ```sh
+   cd timesheet-app
+   ```
+3. Install NPM packages
    ```sh
    npm install
    ```
-3. Run on development server
+4. Run on development server
    ```sh
    npm run dev
    ```
-4. Open the app in your web brower at http://localhost:3000
+5. Open the app in your web brower at http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Api routes
+## API routes
 
 * GET all entries /api/entries
 * GET one entry by id /api/entries/:id
 * GET all entries by client - /api/entries?client=clientName
-* POST create an entry /api/entries
 * DELETE one entry by id /api/entries/:id
+* POST create an entry /api/entries
+* Here is an example of the data structure for creating an entry:
+*  {
+      "date": "2023-07-08",
+      "client": "abc",
+      "project": "abcd",
+      "project_code": "123abc",
+      "hours": 5.68,
+      "billable": "No",
+      "first_name": "Abc",
+      "last_name": "Def",
+      "billable_rate": 30
+   }
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
