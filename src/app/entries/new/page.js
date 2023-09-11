@@ -54,6 +54,7 @@ export default function CreateEntry() {
         if (res.status === 201) {
             alert("Entry created successfully");
             clearForm();
+            router.refresh("/entries");
             router.push("/entries");
         } else {
             alert("Something went wrong");

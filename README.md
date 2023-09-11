@@ -61,7 +61,15 @@ _How you can install and setting up your app._
    ```sh
    npm run dev
    ```
-5. Open the app in your web brower at http://localhost:3000
+5. Build the project
+   ```sh
+   npm run build
+   ```
+6. Start the server
+   ```sh
+   npm run start
+   ```
+7. Open the app in your web brower at http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,13 +84,13 @@ _How you can install and setting up your app._
 * Here is an example of the data structure for creating an entry:
 *  {
       "date": "2023-07-08",
-      "client": "abc",
-      "project": "abcd",
-      "project_code": "123abc",
+      "client": "next",
+      "project": "timesheet-app",
+      "project_code": "next13",
       "hours": 5.68,
-      "billable": "No",
-      "first_name": "Abc",
-      "last_name": "Def",
+      "billable": "Yes",
+      "first_name": "K",
+      "last_name": "C",
       "billable_rate": 30
    }
 
