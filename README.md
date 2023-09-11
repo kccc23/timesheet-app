@@ -1,34 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<br />
+<div align="center">
 
+  <h3 align="center">Next.js Timesheet App</h3>
+
+  <p align="center">
+    <br />
+    <br />
+    <br />
+    <a href="https://github.com/kccc23/timesheet-app/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/kccc23/timesheet-app/issues">Request Feature</a>
+  </p>
+</div>
+
+
+## About The Project
+
+A Timesheet App.
+
+### Built With
+
+This project is built with Next.js and Tailwind CSS.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
-First, run the development server:
+Learn how to get this running locally!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Node
+[Node-url]
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+_Below is an example of how you can install and setting up your app. This template doesn't rely on any external dependencies or services._
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repo
+   ```sh
+   git clone https://github.com/kccc23/timesheet-app.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Run on development server
+   ```sh
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Api routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* GET /api/entries
+* GET /api/entries/:id
+* GET /api/entries?client=clientName
+* POST /api/entries
+* PUT /api/entries/:id
+* DELETE /api/entries/:id
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+## UI
+
+* Home page
+* Entries page
+* Entries page by client
+* Add entry page
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+## Contact
+
+Kaining Chen - kaining.chen.dev@gmail.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[Node-url]: https://nodejs.org/en/

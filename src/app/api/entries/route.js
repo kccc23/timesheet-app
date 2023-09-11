@@ -1,54 +1,25 @@
-import sqlite3 from "sqlite3";
-import { openDb } from "../../../../database/db";
 import { NextResponse } from "next/server";
+import { getEntries, getEntriesByClient, createEntry } from "@/lib/queries";
 
-export async function GET() {
-    const db = await openDb();
-    const timesheets = await db.all("SELECT * FROM timesheet");
-
-    return NextResponse.json(timesheets, {
+export async function GET(req) {
+    const { url } = req;
+    let entries = [];
+    if (url.includes("?") && url.includes("client")) {
+        const urlParams = new URLSearchParams(req.url.slice(req.url.lastIndexOf("?")));
+        const client = urlParams.get("client");
+        entries = await getEntriesByClient(client);
+    } else {
+        entries = await getEntries();
+    }
+    return NextResponse.json(entries, {
         headers: { "Content-Type": "application/json" },
         status: 200,
     });
 }
 
-export async function POST(req, res) {
-    const db = await openDb();
-    const {
-        date,
-        client,
-        project,
-        project_code,
-        hours,
-        billable,
-        first_name,
-        last_name,
-        billable_rate,
-    } = req.body;
-    const result = await db.run(
-        `INSERT INTO timesheet (
-            date,
-            client,
-            project,
-            project_code,
-            hours,
-            billable,
-            first_name,
-            last_name,
-            billable_rate
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [
-            date,
-            client,
-            project,
-            project_code,
-            hours,
-            billable,
-            first_name,
-            last_name,
-            billable_rate,
-        ]
-    );
+export async function POST(req) {
+    const entry = await req.json();
+    const result = await createEntry(entry);
 
     if (result) {
         return new Response(null, {
@@ -56,6 +27,9 @@ export async function POST(req, res) {
             status: 201,
         });
     } else {
-        throw new Error("Unable to add timesheet");
+        return new Response(null, {
+            headers: { "Content-Type": "application/json" },
+            status: 400,
+        });
     }
 }
