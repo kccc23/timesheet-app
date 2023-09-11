@@ -2,8 +2,24 @@
 import { useState } from "react";
 import InputTag from "@/components/InputTag";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CreateEntry() {
+    const fadeInScale = {
+        hidden: {
+            opacity: 0,
+            scale: 0.95,
+        },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 0.3,
+                ease: "easeInOut",
+            },
+        },
+    };
+
     const [formData, setFormData] = useState({
         date: '',
         client: '',
@@ -51,7 +67,12 @@ export default function CreateEntry() {
     };
 
     return (
-        <div className="inset-0 flex items-center justify-center z-50">
+        <motion.div
+            className="inset-0 flex items-center justify-center z-50"
+            initial="hidden"
+            animate="visible"
+            variants={fadeInScale}
+        >
         <div className="bg-white rounded-xl p-8 max-w-xl w-full relative z-10 shadow-lg">
             <div className="mb-8">
                 <Link href="/entries" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
@@ -94,6 +115,6 @@ export default function CreateEntry() {
                 </div>
             </form>
         </div>
-        </div>
+        </motion.div>
     )
 }

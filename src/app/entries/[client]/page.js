@@ -25,7 +25,7 @@ export default async function Entries({ params }) {
                 <label htmlFor="toggleDetails" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
                     Show More Details
                 </label>
-                <div id="show-details" >
+                <div id="show-details">
                     <Details timesheets={timesheets} />
                 </div>
             </div>

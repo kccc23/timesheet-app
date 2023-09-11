@@ -4,7 +4,7 @@
 
 html {
   background-color: #E9F1F7;
-  background-image: linear-gradient(135deg, #E9F1F7, #2274A5);
+  background-image: linear-gradient(135deg, #435b41, #04240ad2);
 }
 
 body {
@@ -27,7 +27,7 @@ table {
 }
 
 thead {
-  background-color: #2274A5;
+  background-color: #26830ad5;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 

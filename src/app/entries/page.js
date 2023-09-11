@@ -19,10 +19,10 @@ export default async function Entries() {
                     Clients
                 </label>
                 <ul id="client-list" className="space-y-2">
-                    <div className="bg-gray-100 p-5 rounded-md shadow-lg mb-6 relative">
+                    <div className="bg-transparent p-5 rounded-md shadow-lg mb-6 relative">
                         {clients.map(client => (
                             <li key={client.client} className="py-1">
-                                <Link href={`/entries/${encodeURIComponent(client.client)}`} className="text-blue-500 hover:underline">
+                                <Link href={`/entries/${encodeURIComponent(client.client)}`} className="text-gray-300 text-xl hover:underline">
                                     {client.client}
                                 </Link>
                             </li>
