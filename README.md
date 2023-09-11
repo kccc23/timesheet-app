@@ -20,26 +20,21 @@ A Timesheet App.
 
 This project is built with Next.js and Tailwind CSS.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Features
 
-Home Page: Navigate to all Entries and Add Entry.
-Entries Page: List and manage all entries, with a toggle client list on the top to view entries for specific clients.
-Entries Page by Client: View entries for specific clients.
-Add Entry Page: Add new time entry.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+* Home Page: Navigate to all Entries and Add Entry.
+* Entries Page: List and manage all entries, with a toggle client list on the top link to view entries for specific clients.
+* Entries Page by Client: View entries for specific clients.
+* Add Entry Page: Add new time entry.
 
 
 ## Getting Started
 
-Learn run this locally.
+Learn to run this locally.
 
 ### Prerequisites
 
-* Node
-visit https://nodejs.org/en
+* Node - visit https://nodejs.org/en
 
 * npm
   ```sh
@@ -48,7 +43,7 @@ visit https://nodejs.org/en
 
 ### Installation
 
-_Below is an example of how you can install and setting up your app. This template doesn't rely on any external dependencies or services._
+_How you can install and setting up your app._
 
 1. Clone the repo
    ```sh
@@ -62,19 +57,18 @@ _Below is an example of how you can install and setting up your app. This templa
    ```sh
    npm run dev
    ```
-4. Open the application in your web brower at http://localhost:3000
+4. Open the app in your web brower at http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Api routes
 
-* GET /api/entries
-* GET /api/entries/:id
-* GET /api/entries?client=clientName
-* POST /api/entries
-* PUT /api/entries/:id
-* DELETE /api/entries/:id
+* GET all entries /api/entries
+* GET one entry by id /api/entries/:id
+* GET all entries by client - /api/entries?client=clientName
+* POST create an entry /api/entries
+* DELETE one entry by id /api/entries/:id
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
