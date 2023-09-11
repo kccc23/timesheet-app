@@ -5,8 +5,6 @@
 
   <p align="center">
     <br />
-    <br />
-    <br />
     <a href="https://github.com/kccc23/timesheet-app/issues">Report Bug</a>
     ·
     <a href="https://github.com/kccc23/timesheet-app/issues">Request Feature</a>
@@ -24,16 +22,24 @@ This project is built with Next.js and Tailwind CSS.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Features
 
-<!-- GETTING STARTED -->
+Home Page: Navigate to all Entries and Add Entry.
+Entries Page: List and manage all entries, with a toggle client list on the top to view entries for specific clients.
+Entries Page by Client: View entries for specific clients.
+Add Entry Page: Add new time entry.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ## Getting Started
 
-Learn how to get this running locally!
+Learn run this locally.
 
 ### Prerequisites
 
 * Node
-[Node-url]
+visit https://nodejs.org/en
 
 * npm
   ```sh
@@ -56,6 +62,7 @@ _Below is an example of how you can install and setting up your app. This templa
    ```sh
    npm run dev
    ```
+4. Open the application in your web brower at http://localhost:3000
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,27 +79,10 @@ _Below is an example of how you can install and setting up your app. This templa
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## UI
-
-* Home page
-* Entries page
-* Entries page by client
-* Add entry page
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- CONTACT -->
 ## Contact
 
-Kaining Chen - kaining.chen.dev@gmail.com
+If you have any questions or issues with Timesheet App, please contact Kaining Chen at kaining.chen.dev@gmail.com.
+
+Thank you!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[Node-url]: https://nodejs.org/en/
