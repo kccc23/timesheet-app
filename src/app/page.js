@@ -24,7 +24,7 @@ export default function Home() {
             <div className="flex space-x-8">
                 <Link href="/entries" passHref>
                     <motion.div
-                        className="bg-blue-500 cursor-pointer text-xl py-2 px-6 hover:bg-blue-600 transition duration-300 rounded"
+                        className="bg-custom-green cursor-pointer text-xl py-2 px-6 hover:bg-custom-green-dark transition duration-300 rounded"
                         whileHover="hover"
                         variants={buttonVariants}
                     >
@@ -33,7 +33,7 @@ export default function Home() {
                 </Link>
                 <Link href="/entries/new" passHref>
                     <motion.div
-                        className="bg-blue-500 cursor-pointer text-xl py-2 px-6 hover:bg-blue-600 transition duration-300 rounded"
+                        className="bg-custom-green cursor-pointer text-xl py-2 px-6 hover:bg-custom-green-dark transition duration-300 rounded"
                         whileHover="hover"
                         variants={buttonVariants}
                     >

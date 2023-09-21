@@ -15,14 +15,14 @@ export default async function Entries() {
         <div className="container mx-auto p-8">
             <div>
                 <input type="checkbox" id="toggleClientList" className="absolute opacity-0 w-0 h-0" />
-                <label htmlFor="toggleClientList" className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">
+                <label htmlFor="toggleClientList" className="inline-block bg-custom-green text-white py-2 px-4 rounded hover:bg-custom-green-dark transition duration-300">
                     Clients
                 </label>
                 <ul id="client-list" className="space-y-2">
                     <div className="bg-transparent p-5 rounded-md shadow-lg mb-6 relative">
                         {clients.map(({client}) => (
                             <li key={client} className="py-1">
-                                <Link href={`/entries/${encodeURIComponent(client)}`} className="text-gray-300 text-xl hover:underline">
+                                <Link href={`/entries/${encodeURIComponent(client)}`} className="text-gray-700 text-xl hover:underline">
                                     {client}
                                 </Link>
                             </li>
@@ -32,7 +32,7 @@ export default async function Entries() {
             </div>
             <div className="my-5">
                 <Link href="/entries/new">
-                    <button className="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add Entry</button>
+                    <button className="inline-block bg-custom-green text-white py-2 px-4 rounded hover:bg-custom-green-dark transition duration-300">Add Entry</button>
                 </Link>
             </div>
             <div className="bg-gray-100 p-5 rounded-md shadow-lg">

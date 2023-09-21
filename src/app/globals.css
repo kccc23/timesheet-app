@@ -4,7 +4,7 @@
 
 html {
   background-color: #E9F1F7;
-  background-image: linear-gradient(135deg, #435b41, #04240ad2);
+  background-image: linear-gradient(135deg, #D3D5D4, #878E99);
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   background: transparent;
-  color: #131B23;
+  color: #131b23ac;
   line-height: 1.8;
 }
 
@@ -22,12 +22,12 @@ table {
   border-collapse: collapse;
   margin: 20px 0;
   font-family: 'Poppins', sans-serif;
-  color: #131B23;
+  color: #131b23ac;
   box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
 thead {
-  background-color: #26830ad5;
+  background-color: #9DB5B2;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -47,7 +47,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background-color: #E7DFC6;
+  background-color: #9DB5B2;
 }
 
 tbody td {
@@ -63,7 +63,7 @@ th:nth-of-type(2) {
 
 td:nth-of-type(1),
 td:nth-of-type(2) {
-  color: #816C61;
+  color: #787a7f;
 }
 
 td:nth-of-type(3),
@@ -113,20 +113,32 @@ th:nth-of-type(5) {
 
 #toggleClientList:not(:checked) + label + #client-list {
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
 }
 
 #toggleClientList:checked + label + #client-list {
-    transition: max-height 0.3s ease;
+    opacity: 1;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
 }
 
 #toggleDetails:not(:checked) + label + #show-details {
   max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
 }
 
 #toggleDetails:checked + label + #show-details {
-  transition: max-height 0.3s ease;
+  opacity: 1;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+}
+
+.bg-custom-green {
+  background-color: #7F6A93;
+}
+
+.hover\:bg-custom-green-dark:hover {
+  background-color: #6D587B;
 }
